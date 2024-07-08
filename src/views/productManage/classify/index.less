@@ -1,0 +1,44 @@
+.product-manage-classify {
+  padding: 15px;
+  display: flex;
+
+  .classify-tree {
+    flex-shrink: 0;
+    width: 400px;
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    .tree-node {
+      display: flex;
+      justify-content: space-between;
+
+      .tree-node-append {
+        display: none;
+
+        .el-button+.el-button {
+          margin-left: 5px;
+        }
+      }
+
+      &:hover {
+
+        .tree-node-append {
+          display: unset;
+        }
+      }
+    }
+
+    .el-tree-node__label {
+      width: 100%;
+    }
+  }
+
+  .classify-main {
+    width: calc(100% - 315px);
+    margin-left: 15px;
+    background: white;
+    border-radius: 5px;
+  }
+}
