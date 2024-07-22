@@ -7,7 +7,7 @@ import {
   onBeforeMount,
 } from "vue"
 import './index.less'
-import {ECommentType, IFormConfigParams, IListParams, ITableColumnParams} from "@/serviceType";
+import {ECommentType, IFormConfigParams} from "@/serviceType";
 import wForm from '@/components/wForm'
 
 import {useProductManageAddModel} from "@/views/productManage/add/model";
@@ -50,7 +50,7 @@ export default defineComponent({
     })
 
     onMounted(async ()=> {
-      console.log(1111)
+      console.log(proxy.$route.params.id)
     })
 
     return () => (
