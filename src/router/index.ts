@@ -34,6 +34,7 @@ router.beforeEach(async (to, from, next) => {
     const routes = router.getRoutes()
     if (routes?.length===3) {
       const path = await AllRoutes()
+      console.log(123, routes)
       if (path) {
         next({
           path: to.fullPath,
@@ -44,6 +45,7 @@ router.beforeEach(async (to, from, next) => {
       }
     } else {
       handleTabs(to)
+      console.log(111, to)
       next()
     }
   }
@@ -55,6 +57,7 @@ function handleTabs(val:any) {
   const piniaStore = usePiniaStore()
   const {routeList} = storeToRefs(piniaStore)
   let alreadyRoute:IRouteParams = {
+    title: '',
     name: '',
     path: ''
   } // tabsList中已存在的路由信息
@@ -69,6 +72,7 @@ function handleTabs(val:any) {
   })
   if (!isInclude) {  // tabs标签栏添加当前激活页
     routes.push({
+      title: val.meta.title,
       name: val.name,
       path: val.path
     })
@@ -76,7 +80,8 @@ function handleTabs(val:any) {
   } else {
     if (alreadyIndex !== -1 && alreadyRoute.path !== val.fullPath) { // 用来处理path相同fullPath不同的标签页替换情况
       routes.splice(alreadyIndex, 1, {
-        name: val.meta.title,
+        name: val.name,
+        title: val.meta.title,
         path: val.fullPath
       })
     }

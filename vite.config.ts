@@ -9,7 +9,7 @@ export default defineConfig({
     vueJsx()
   ],
   server: {
-    port: 10050,
+    port: 10051,
     host: '0.0.0.0',
     open: true,
   },

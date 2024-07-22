@@ -45,6 +45,7 @@ export default defineComponent({
     const handleTableData = () => {
       let arr:Array<any> = [
         {
+          id: 1,
           creatTime: '2016-05-01 14:02:22',
           productName: '鲈鱼',
           productCode: 'No. 189, Grove St, Los Angeles',
@@ -54,6 +55,7 @@ export default defineComponent({
           salePrice: '¥30.23'
         },
         {
+          id: 2,
           creatTime: '2016-05-01 14:02:22',
           productName: '基围虾',
           productCode: 'No. 189, Grove St, Los Angeles',
@@ -63,6 +65,7 @@ export default defineComponent({
           salePrice: '¥30.23'
         },
         {
+          id: 3,
           creatTime: '2016-05-01 14:02:22',
           productName: '芒果',
           productCode: 'No. 189, Grove St, Los Angeles',
@@ -108,7 +111,7 @@ export default defineComponent({
               <el-button link v-model:type={ECommentType.PRIMARY}>
                 {proxy.$t('common.detail')}
               </el-button>
-              <el-button link v-model:type={ECommentType.PRIMARY}>
+              <el-button link v-model:type={ECommentType.PRIMARY} onClick={() => handleEdit(row.id)}>
                 {proxy.$t('common.edit')}
               </el-button>
             </div>
@@ -128,6 +131,13 @@ export default defineComponent({
     // 新增
     const handleAdd = () => {
       proxy.$router.push(ERoutePath.PRODUCT_MANAGE_ADD)
+    }
+
+    // 编辑
+    const handleEdit = (val) => {
+      proxy.$router.push({
+        path: `/productManage/edit/${val}`
+      })
     }
 
     onBeforeMount( async ()=> {

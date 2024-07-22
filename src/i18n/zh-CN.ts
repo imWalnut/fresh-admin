@@ -49,6 +49,7 @@ export default {
     storeManageRecommend: '新客推荐',
     productManageList: '商品列表',
     productManageAdd: '新增商品',
+    productManageEdit: '编辑商品',
     productManageClassify: '商品分类',
     productManageGroup: '商品分组',
     productManageSpecification: '商品规格',

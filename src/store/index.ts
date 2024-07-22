@@ -1,6 +1,6 @@
 import {defineStore} from "pinia"
 import {ref} from "vue"
-import {ERouteName, ERoutePath, IRouteParams} from "@/serviceType";
+import {ERouteName, ERoutePath, ERouteTitle, IRouteParams} from "@/serviceType";
 
 const usePiniaStore = defineStore('demo', () => {
   // 左侧菜单折叠状态
@@ -28,6 +28,7 @@ const usePiniaStore = defineStore('demo', () => {
   const routeList:any = ref([
     {
       name: ERouteName.HOME,
+      title: ERouteTitle.HOME,
       path: ERoutePath.HOME,
     }
   ])

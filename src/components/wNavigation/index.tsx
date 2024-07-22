@@ -6,7 +6,7 @@ import {
   watchEffect
 } from "vue"
 import './index.less'
-import {ERouteName, ERoutePath, IRouteParams} from "@/serviceType";
+import {ERouteName, ERoutePath, ERouteTitle, IRouteParams} from "@/serviceType";
 import usePiniaStore from "@/store";
 import {storeToRefs} from "pinia";
 
@@ -93,6 +93,7 @@ export default defineComponent({
       const routes = [
         {
           name: ERouteName.HOME,
+          title: ERouteTitle.HOME,
           path: ERoutePath.HOME,
         }
       ]
@@ -110,7 +111,7 @@ export default defineComponent({
       })) {
         routes.unshift({
           path: ERoutePath.HOME,
-          name: ERouteName.HOME
+          name: ERouteTitle.HOME
         })
       }
       piniaStore.handleRouteList(routes)
@@ -127,6 +128,7 @@ export default defineComponent({
       })) {
         routes.unshift({
           path: ERoutePath.HOME,
+          title: ERouteTitle.HOME,
           name: ERouteName.HOME
         })
       }
@@ -174,7 +176,7 @@ export default defineComponent({
     const renderTabs = () => {
       const tabItem: any = routeList.value.map((item: IRouteParams, index: number) => {
         return (
-          <el-tab-pane closable={index !== 0} class="tabs-item" label={item.name} key={item.path} name={item.path}/>
+          <el-tab-pane closable={index !== 0} class="tabs-item" label={item.title} key={item.path} name={item.path}/>
         )
       })
       return (

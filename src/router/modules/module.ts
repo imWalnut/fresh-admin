@@ -59,6 +59,16 @@ const routes:Array<RouteRecordRaw> = [
         component: util.handleComponentPath(ERoutePath.PRODUCT_MANAGE_ADD),
     },
     {
+        // /商品管理/编辑商品
+        path: '/productManage/edit/:id',
+        name: ERouteName.PRODUCT_MANAGE_EDIT,
+        meta: {
+            title: ERouteTitle.PRODUCT_MANAGE_EDIT,
+            hide: true,
+        },
+        component: util.handleComponentPath(ERoutePath.PRODUCT_MANAGE_EDIT),
+    },
+    {
         // /商品管理/商品分类
         path: ERoutePath.PRODUCT_MANAGE_CLASSIFY,
         name: ERouteName.PRODUCT_MANAGE_CLASSIFY,

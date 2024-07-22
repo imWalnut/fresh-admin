@@ -49,6 +49,7 @@ export default {
     storeManageRecommend: 'Store Manage Recommend',
     productManageList: 'Product Manage List',
     productManageAdd: 'Product Manage Add',
+    productManageEdit: 'Product Manage Edit',
     productManageClassify: 'Product Manage Classify',
     productManageGroup: 'Product Manage Group',
     productManageSpecification: 'Product Manage Specification',
